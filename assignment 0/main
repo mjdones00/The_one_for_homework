@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void)
+{
+ int n=0;
+ int i, j;
+ int position;
+ int skipper;
+ int counter=0;
+ char word[101];
+ char word_out [101];
+
+ scanf("%d", &n);
+
+  for (i=0;i<n;i++){
+    scanf ("%s", word);
+    position =0;
+    skipper=12;
+    strcpy(word_out,word);
+    for (j=0;j<strlen(word); j++){
+           //   if (word[j]!= 'a'||'e'||'i'||'o'||'u')
+          //  skipper = 13;
+        //if (word[j]=='a'||'e'||'i'||'o'||'u')
+         //   skipper = 13;
+
+               if( word[j]+skipper>'z'){
+                (word_out[j])= (word[j]+skipper)-25;
+               }
+               else
+               word_out[j]= word[j]+skipper;
+//this two 'if' statement set up the skipper for the next letter.
+ //          if (word[j]!= 'a'||'e'||'i'||'o'||'u')
+           skipper = 12;
+         if (word[j]=='a'||'e'||'i'||'o'||'u')
+            skipper = 13;
+
+
+                    position++;
+}
+printf("%s\n", word_out);
+  }
+    return 0;
+}
